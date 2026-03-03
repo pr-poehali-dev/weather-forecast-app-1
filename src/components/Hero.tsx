@@ -9,8 +9,15 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 pt-20">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-sand/30 to-background" />
+      {/* Background image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="https://cdn.poehali.dev/projects/020c789e-f043-4936-88af-a05b22cc6be2/files/19c2191e-d8ca-4f12-9a81-450dc3c48dcf.jpg"
+          alt="Йога с певчими птицами"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Overline */}

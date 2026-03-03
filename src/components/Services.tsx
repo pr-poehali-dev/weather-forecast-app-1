@@ -65,6 +65,19 @@ export function Services() {
           </h2>
         </div>
 
+        {/* Photo banner */}
+        <div
+          className={`mb-px overflow-hidden h-64 md:h-80 transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <img
+            src="https://cdn.poehali.dev/projects/020c789e-f043-4936-88af-a05b22cc6be2/files/6117f8ed-b912-48d9-8feb-dd320d95e60d.jpg"
+            alt="Занятия в студии"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-px bg-border">
           {services.map((service, index) => (
             <div
