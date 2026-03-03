@@ -75,7 +75,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Локация</p>
-                <p className="text-foreground">Студия йоги с певчими птицами</p>
+                <p className="text-foreground">Улица Тишины д.1</p>
               </div>
             </div>
           </div>
