@@ -74,6 +74,12 @@ export function Contact() {
                 </a>
               </div>
               <div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Телефон</p>
+                <a href="tel:777777" className="text-foreground hover:text-sage transition-colors">
+                  777-777
+                </a>
+              </div>
+              <div>
                 <p className="text-xs tracking-widest uppercase text-muted-foreground mb-2">Локация</p>
                 <p className="text-foreground">Улица Тишины д.1</p>
               </div>
