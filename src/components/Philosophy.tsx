@@ -47,7 +47,7 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Наша философия
+              О нас
             </p>
 
             <h2
@@ -55,10 +55,10 @@ export function Philosophy() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Искусство
-              <span className="italic"> осознанной</span>
+              Место, где
+              <span className="italic"> замолкает</span>
               <br />
-              жизни
+              суета
             </h2>
 
             <div
@@ -67,13 +67,13 @@ export function Philosophy() {
               }`}
             >
               <p>
-                Мы верим, что каждое пространство таит в себе потенциал для преображения. Не через добавление,
-                а через бережное вычитание — открывая то, что всегда было предначертано.
+                Мы создали уникальное пространство, где тело и ум находят гармонию в окружении живой природы.
+                Пение птиц создаёт особую вибрацию, которая помогает глубже войти в практику и отпустить напряжение.
               </p>
               <p>
-                Наш подход вдохновлён японской концепцией <em className="text-foreground">ма</em> — глубокой
-                красотой пустоты — и скандинавским пониманием
-                <em className="text-foreground"> хюгге</em>, этого ощущения уютного умиротворения.
+                Каждое занятие — это не просто тренировка, а медитативный опыт.
+                Наши инструкторы соединяют традиционные практики йоги с
+                <em className="text-foreground"> осознанным присутствием</em>, которое рождается в тишине и звуке природы.
               </p>
             </div>
 
@@ -84,16 +84,16 @@ export function Philosophy() {
               }`}
             >
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">12</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Лет опыта</p>
+                <p className="font-serif text-3xl md:text-4xl text-sage">4</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Направления</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">140+</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Проектов</p>
+                <p className="font-serif text-3xl md:text-4xl text-sage">500+</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Учеников</p>
               </div>
               <div>
-                <p className="font-serif text-3xl md:text-4xl text-sage">8</p>
-                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Наград</p>
+                <p className="font-serif text-3xl md:text-4xl text-sage">∞</p>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">Покоя</p>
               </div>
             </div>
           </div>

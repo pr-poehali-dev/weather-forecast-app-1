@@ -1,7 +1,26 @@
 import { useEffect, useRef, useState } from "react"
 
+const testimonials = [
+  {
+    quote: "Никогда не думала, что пение птиц так сильно влияет на практику. На занятии по йоге я впервые за долгое время по-настоящему отключилась от всех мыслей. Это какая-то магия!",
+    name: "Ольга Соколова",
+    detail: "Занимается йогой 3 месяца",
+  },
+  {
+    quote: "Пришла на растяжку после офисной работы — ушла абсолютно другим человеком. Инструктор потрясающий, атмосфера невероятная. Птицы поют так, что хочется остаться навсегда!",
+    name: "Марина Белова",
+    detail: "Посещает 2 раза в неделю",
+  },
+  {
+    quote: "Занимаюсь пилатесом уже полгода. Спина перестала болеть, осанка выровнялась. Но главное — это ощущение покоя после каждого занятия. Птицы создают особую тишину внутри.",
+    name: "Андрей Климов",
+    detail: "Абонемент 8 занятий",
+  },
+]
+
 export function Testimonial() {
   const [isVisible, setIsVisible] = useState(false)
+  const [active, setActive] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -21,10 +40,18 @@ export function Testimonial() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const current = testimonials[active]
+
   return (
     <section ref={sectionRef} className="py-32 lg:py-40 px-6 lg:px-12 bg-sage">
       <div className="max-w-5xl mx-auto text-center">
-        {/* Quote Mark */}
         <div
           className={`mb-10 transition-all duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}
         >
@@ -33,24 +60,34 @@ export function Testimonial() {
           </svg>
         </div>
 
-        {/* Quote */}
         <blockquote
-          className={`font-serif text-2xl md:text-3xl lg:text-4xl font-light text-primary-foreground leading-relaxed mb-10 text-balance transition-all duration-1000 delay-200 ${
+          key={active}
+          className={`font-serif text-2xl md:text-3xl lg:text-4xl font-light text-primary-foreground leading-relaxed mb-10 text-balance transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          Работа с Wabi была похожа на медитацию. Они поняли, что наш дом должен поддерживать
-          благополучие семьи, а не просто красиво выглядеть. Результат — пространство, которое наконец ощущается как наше.
+          {current.quote}
         </blockquote>
 
-        {/* Attribution */}
         <div
           className={`transition-all duration-1000 delay-400 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-sm tracking-widest uppercase text-primary-foreground/80">Анна и Михаил Петровы</p>
-          <p className="text-sm text-primary-foreground/60 mt-1">Резиденция в Москве</p>
+          <p className="text-sm tracking-widest uppercase text-primary-foreground/80">{current.name}</p>
+          <p className="text-sm text-primary-foreground/60 mt-1">{current.detail}</p>
+        </div>
+
+        <div className="flex justify-center gap-3 mt-10">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === active ? "bg-primary-foreground w-6" : "bg-primary-foreground/40"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
